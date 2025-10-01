@@ -7,7 +7,7 @@ interface Contact {
 }
 
 const contacts: Contact[] = []
-const csvPath = path.join(process.cwd(), "contacts.csv")
+const csvPath = path.join(process.cwd(), "public", "contacts.csv")
 
 // Ensure CSV file exists with header
 if (!fs.existsSync(csvPath)) {
