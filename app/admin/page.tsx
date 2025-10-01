@@ -66,7 +66,7 @@ function AdminContent() {
 
   if (!isAuthorized) {
     return (
-      <main className="relative min-h-screen">
+      <main className="relative min-h-screen bg-black">
         <AnimatedBackground />
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4">
           <Card className="w-full max-w-md border-white/20 bg-white/5 backdrop-blur-xl">
@@ -106,7 +106,7 @@ function AdminContent() {
   }
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen bg-black">
       <AnimatedBackground />
       <div className="relative z-10 min-h-screen px-4 py-8">
         <div className="mx-auto max-w-6xl space-y-8">
