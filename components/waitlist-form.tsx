@@ -25,34 +25,15 @@ export function WaitlistForm() {
 
     setIsLoading(true)
 
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          timestamp: new Date().toISOString(),
-        }),
-      })
+    toast.success('Cadastro realizado com sucesso!', {
+      description: 'Você foi adicionado à whitelist.',
+      position: 'bottom-center'
+    });
+    setEmail('')
 
-      if (response.ok) {
-        toast.success('Cadastro realizado com sucesso!', {
-          description: 'Você foi adicionado à whitelist.',
-          position: 'bottom-center'
-        });
-        setEmail('')
-      } else {
-        throw new Error("Erro ao adicionar à lista")
-      }
-    } catch (error) {
-      toast.error("Erro",{
-        description: "Não foi possível adicionar você à lista. Tente novamente.",
-      })
-    } finally {
-      setIsLoading(false)
-    }
+    setIsLoading(false)
+    const encodedEmail = encodeURIComponent(email)
+    window.location.href = `https://wa.me/+5515997876029?text=${encodedEmail}+Quero+entrar+na+lista`
   }
 
   return (
