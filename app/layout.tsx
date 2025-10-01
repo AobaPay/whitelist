@@ -4,6 +4,9 @@ import { Bricolage_Grotesque } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -19,6 +22,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gateway de Pagamento Pix - R$ 0,78 por transação",
     description: "Gateway de pagamento com Pix por apenas R$ 0,78 por transação",
+    images: [
+      {
+        url: "/image.png",
+        alt: "Gateway de Pagamento Pix - R$ 0,78 por transação",
+      },
+    ],
     type: "website",
   },
   generator: "v0.app",
@@ -35,8 +44,12 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className={`font-sans ${bricolageGrotesque.variable} antialiased`}>
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </TooltipProvider>
       </body>
     </html>
   )

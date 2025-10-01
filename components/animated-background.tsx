@@ -3,12 +3,6 @@
 export function AnimatedBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(to top, #002ec9 0%, #001a70 40%, #001050 70%, #000814 100%)`,
-        }}
-      />
 
       <div className="noise-bg absolute inset-0" />
 
@@ -53,10 +47,10 @@ export function AnimatedBackground() {
             className="absolute h-1 w-1 rounded-full"
             style={{
               backgroundColor: "#08d6b4",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${5 + Math.random() * 10}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: `87.2%`,
+              top: `77.9%`,
+              animation: `float 6s ease-in-out infinite`,
+              animationDelay: "6s",
               boxShadow: "0 0 10px rgba(8, 214, 180, 0.8)",
             }}
           />

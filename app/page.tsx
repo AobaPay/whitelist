@@ -1,17 +1,25 @@
 import { AnimatedBackground } from "@/components/animated-background"
+import { NoiseBackground } from "@/components/NoiseBackground"
 import { WaitlistForm } from "@/components/waitlist-form"
 import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen "
+    
+       style={{
+          background: `linear-gradient(to top, #002ec9 0%, #001a70 40%, #001050 70%, #000814 100%)`,
+        }}>
+
       <AnimatedBackground />
+
+      <NoiseBackground />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-12">
         <div className="w-full max-w-2xl space-y-10 text-center">
           <div className="flex justify-center animate-in fade-in slide-in-from-top duration-700">
             <div className="rounded-full border border-[#08d6b4] bg-[#08d6b4]/10 px-4 py-1.5 text-sm font-medium text-[#08d6b4] backdrop-blur-sm">
-              Coming soon
+              Coming soon 🤟🏻
             </div>
           </div>
 
